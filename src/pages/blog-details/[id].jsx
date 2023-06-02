@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import BreadCrumb2 from "../../components/blog-details/BreadCrumb2";
 import Comments from "../../components/blog-details/Comments";
 import Pagination from "../../components/blog-details/Pagination";
 import Ratings from "../../components/blog-details/Ratings";
@@ -44,12 +43,6 @@ const BlogDetailsDynamic = () => {
       {/* <!-- Main Blog Post Content --> */}
       <section className="blog_post_container bgc-f7">
         <div className="container">
-          <div className="row">
-            <div className="col-xl-6">
-              <BreadCrumb2 />
-            </div>
-          </div>
-          {/* End .row */}
 
           <div className="row">
             <div className="col-lg-8">
