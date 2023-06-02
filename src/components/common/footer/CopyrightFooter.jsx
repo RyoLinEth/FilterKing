@@ -3,10 +3,10 @@ import Link from "next/link";
 const CopyrightFooter = () => {
   const menuItems = [
     { id: 1, name: "Home", routeLink: "/" },
-    { id: 2, name: "Listing", routeLink: "/listing-grid-v3" },
-    { id: 3, name: "Property", routeLink: "/listing-grid-v4" },
-    { id: 4, name: "About Us", routeLink: "/about-us" },
-    { id: 5, name: "Blog", routeLink: "/blog-list-3" },
+    { id: 2, name: "Search", routeLink: "/search" },
+    // { id: 3, name: "Property", routeLink: "/listing-grid-v4" },
+    // { id: 4, name: "About Us", routeLink: "/about-us" },
+    // { id: 5, name: "Blog", routeLink: "/blog-list-3" },
     { id: 6, name: "Contact", routeLink: "/contact" },
   ];
 
@@ -31,13 +31,13 @@ const CopyrightFooter = () => {
         <div className="copyright-widget text-end">
           <p>
             &copy; {new Date().getFullYear()} by{" "}
-            <a
+            {/* <a
               href="https://themeforest.net/user/ib-themes"
               target="_blank"
               rel="noreferrer"
-            >
-              ib-themes
-            </a>
+            > */}
+              花栗鼠
+            {/* </a> */}
             . All rights reserved.
           </p>
         </div>

@@ -15,8 +15,8 @@ const HeaderMenuContent = ({ float = "" }) => {
   const listing = [
     {
       id: 1,
-      name: "Grid v1",
-      routerPath: "/listing-grid-v1",
+      name: "Search",
+      routerPath: "/search",
     }
   ];
 

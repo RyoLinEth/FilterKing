@@ -6,7 +6,7 @@ const HeroFilter = () => {
             <div className="home-text text-center">
                 <h2 className="fz55">Find Your Dream Figure</h2>
                 <p className="fz18 color-white">
-                    找到您心儀的商品
+                    找到您心儀的公仔
                 </p>
             </div>
             {/* End .home-text */}
