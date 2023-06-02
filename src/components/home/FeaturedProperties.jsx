@@ -34,13 +34,13 @@ const FeaturedProperties = () => {
         <div className="thumb">
           <img className="img-whp" src={item.img} alt="fp1.jpg" />
           <div className="thmb_cntnt">
-            <ul className="tag mb0">
+            {/* <ul className="tag mb0">
               {item.saleTag.map((val, i) => (
                 <li className="list-inline-item" key={i}>
                   <a href="#">{val}</a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
             {/* End .tag */}
 
             <ul className="icon mb0">
@@ -60,7 +60,7 @@ const FeaturedProperties = () => {
             <Link href={`/listing-details-v1/${item.id}`}>
               <a className="fp_price">
                 ${item.price}
-                <small>/mo</small>
+                <small> points</small>
               </a>
             </Link>
           </div>
@@ -76,11 +76,10 @@ const FeaturedProperties = () => {
               </Link>
             </h4>
             <p>
-              <span className="flaticon-placeholder"></span>
               {item.location}
             </p>
 
-            <ul className="prop_details mb0">
+            {/* <ul className="prop_details mb0">
               {item.itemDetails.map((val, i) => (
                 <li className="list-inline-item" key={i}>
                   <a href="#">
@@ -88,11 +87,11 @@ const FeaturedProperties = () => {
                   </a>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
           {/* End .tc_content */}
 
-          <div className="fp_footer">
+          {/* <div className="fp_footer">
             <ul className="fp_meta float-start mb0">
               <li className="list-inline-item">
                 <Link href="/agent-v2">
@@ -108,7 +107,7 @@ const FeaturedProperties = () => {
               </li>
             </ul>
             <div className="fp_pdate float-end">{item.postedYear}</div>
-          </div>
+          </div> */}
           {/* End .fp_footer */}
         </div>
         {/* End .details */}
