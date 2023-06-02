@@ -185,25 +185,6 @@ const FeaturedItem = () => {
               </h4>
             </div>
             {/* End .tc_content */}
-
-            <div className="fp_footer">
-              <ul className="fp_meta float-start mb0">
-                <li className="list-inline-item">
-                  <Link href="/agent-v2">
-                    <a>
-                      <img src={item.posterAvatar} alt="pposter1.png" />
-                    </a>
-                  </Link>
-                </li>
-                <li className="list-inline-item">
-                  <Link href="/agent-v2">
-                    <a>{item.posterName}</a>
-                  </Link>
-                </li>
-              </ul>
-              <div className="fp_pdate float-end">{item.postedYear}</div>
-            </div>
-            {/* End .fp_footer */}
           </div>
         </div>
       </div>

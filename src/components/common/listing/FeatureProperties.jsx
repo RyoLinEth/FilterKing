@@ -28,7 +28,7 @@ const FeatureProperties = () => {
                                 <div className="thmb_cntnt">
                                     <a className="fp_price" href="#">
                                         ${item.price}
-                                        <small>/mo</small>
+                                        <small> points</small>
                                     </a>
                                     <h4 className="posr color-white">
                                         {item.title}
