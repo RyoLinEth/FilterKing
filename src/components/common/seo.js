@@ -13,7 +13,7 @@ const Seo = ({ pageTitle, font }) => (
       />
       <meta
         name="description"
-        content="FindHouse - Real Estate React Template"
+        content="FindFigure"
       />
       <meta name="ibthemes" content="ATFN" />
       <meta
