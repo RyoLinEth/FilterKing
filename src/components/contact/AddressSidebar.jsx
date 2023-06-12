@@ -3,7 +3,7 @@ import Social from "../common/footer/Social";
 const AddressSidebar = () => {
   return (
     <div className="contact_localtion">
-      <h4>Contact Us</h4>
+      {/* <h4>Contact Us</h4>
       <div className="content_list">
         <h5>Address</h5>
         <p>
@@ -13,7 +13,7 @@ const AddressSidebar = () => {
       <div className="content_list">
         <h5>官方Line ID</h5>
         <p>請使用Line 應用程式搜尋 @568boqfb</p>
-      </div>
+      </div> */}
     </div>
   );
 };

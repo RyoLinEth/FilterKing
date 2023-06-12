@@ -42,7 +42,16 @@ const ListingDynamicDetailsV1 = () => {
               <div className="col-lg-7 col-xl-8">
                 <div className="single_property_title mt30-767">
                   <h2>{property?.title}</h2>
-                  <p>{property?.location}</p>
+                  <h4 style={{
+                    color:'#00C4F4',
+                    border:'1px solid black',
+                    width:'100px',
+                    display:'flex',
+                    justifyContent:'center',
+                    alignItems:'center',
+                    borderRadius:'5px',
+                  }}>{property?.featured}</h4>
+
                 </div>
               </div>
               <div className="col-lg-5 col-xl-4">
@@ -50,7 +59,7 @@ const ListingDynamicDetailsV1 = () => {
                   <div className="price float-start fn-400">
                     <h2>
                       ${property?.price}
-                      <small>/mo</small>
+                      <small>/points</small>
                     </h2>
                   </div>
 
@@ -89,22 +98,22 @@ const ListingDynamicDetailsV1 = () => {
                 <div className="row">
                   <div className="col-lg-12">
                     <div className="spls_style_two mb30-520">
-                      <Item
+                      {/* <Item
                         original={property?.img}
                         thumbnail={property?.img}
                         width={752}
                         height={450}
                       >
                         {({ ref, open }) => (
-                          <div role="button" ref={ref} onClick={open}>
+                          <div role="button" ref={ref} onClick={open}> */}
                             <img
-                              className="img-fluid w100 cover lds-1"
+                              // className="img-fluid w100 cover lds-1"
                               src={property.img}
                               alt="1.jpg"
                             />
-                          </div>
+                          {/* </div>
                         )}
-                      </Item>
+                      </Item> */}
                     </div>
                   </div>
                 </div>
@@ -145,31 +154,28 @@ const ListingDynamicDetailsV1 = () => {
       </section>
 
       {/* <!-- Agent Single Grid View --> */}
-      <section className="our-agent-single bgc-f7 pb30-991">
+      {/* <section className="our-agent-single bgc-f7 pb30-991">
         <div className="container">
           <div className="row">
             <div className="col-md-12 col-lg-8">
               <DetailsContent />
             </div>
-            {/* End details content .col-lg-8 */}
 
             <div className="col-lg-4 col-xl-4">
               <Sidebar />
             </div>
-            {/* End sidebar content .col-lg-4 */}
           </div>
-          {/* End .row */}
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Footer --> */}
-      <section className="footer_one">
+      {/* <section className="footer_one">
         <div className="container">
           <div className="row">
             <Footer />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* <!-- Our Footer Bottom Area --> */}
       <section className="footer_middle_area pt40 pb40">

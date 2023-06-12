@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { addPrice } from "../../features/properties/propertiesSlice";
 
 const RangeSlider = () => {
-  const [price, setPrice] = useState({ value: { min: 1, max: 200 } });
+  const [price, setPrice] = useState({ value: { min: 1, max: 7000 } });
   const dispath = useDispatch();
 
   const handleOnChange = (value) => {
@@ -41,7 +41,7 @@ const RangeSlider = () => {
 
       <InputRange
         formatLabel={(value) => ``}
-        maxValue={200}
+        maxValue={7000}
         minValue={1}
         value={price.value}
         onChange={(value) => handleOnChange(value)}

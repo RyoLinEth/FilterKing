@@ -133,7 +133,7 @@ const FilteringItem = () => {
     setLocation("");
     setStatus("");
     setPropertiesType("");
-    dispath(addPrice({ min: 1, max: 2000 }));
+    dispath(addPrice({ min: 1, max: 7000 }));
     setBathroom("");
     setBedroom("");
     setBedroom("");
