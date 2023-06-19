@@ -17,7 +17,10 @@ const FeaturedItem = () => {
     yearBuilt,
     area,
     amenities,
+    currentPage,
+    dataPerPage,
   } = useSelector((state) => state.properties);
+
   const { statusType, featured, isGridOrList } = useSelector(
     (state) => state.filter
   );
@@ -114,8 +117,10 @@ const FeaturedItem = () => {
   };
 
   // status handler
+
+  let currentIndex = 0;
   let content = properties
-    ?.slice(0, 10)
+    ?.slice(0, properties.length)
     ?.filter(keywordHandler)
     // ?.filter(locationHandler)
     ?.filter(statusHandler)
@@ -129,66 +134,75 @@ const FeaturedItem = () => {
     ?.filter(advanceHandler)
     ?.sort(statusTypeHandler)
     ?.filter(featuredHandler)
-    .map((item) => (
-      <div
-        className={`${
-          isGridOrList ? "col-12 feature-list" : "col-md-6 col-lg-6"
-        } `}
-        key={item.id}
-      >
-        <div
-          className={`feat_property home7 style4 ${
-            isGridOrList ? "d-flex align-items-center" : undefined
-          }`}
-        >
-          <div className="thumb">
-            <img className="img-whp" src={item.img} alt="fp1.jpg" />
-            <div className="thmb_cntnt">
-              <ul className="tag mb0">
-                <li className="list-inline-item">
-                  <a href="#">庫存</a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#" className="text-capitalize">
-                    {item.featured}
-                  </a>
-                </li>
-              </ul>
-              <ul className="icon mb0">
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-transfer-1"></span>
-                  </a>
-                </li>
-                <li className="list-inline-item">
-                  <a href="#">
-                    <span className="flaticon-heart"></span>
-                  </a>
-                </li>
-              </ul>
+    // ?.slice(
+    //   (currentPage - 1) * dataPerPage,
+    //   currentPage * dataPerPage
+    // )
+    .map(
+      (item) => {
+        currentIndex++;
+        if (currentIndex <= (currentPage - 1) * dataPerPage) return;
+        if (currentIndex > currentPage * dataPerPage) return;
+        return (
 
-              <Link href={`/listing-details-v1/${item.id}`}>
-                <a className="fp_price">
-                  ${item.price}
-                  <small> points </small>
-                </a>
-              </Link>
+          <div
+            className={`${isGridOrList ? "col-12 feature-list" : "col-md-6 col-lg-6"
+              } `}
+            key={item.id}
+          >
+            <div
+              className={`feat_property home7 style4 ${isGridOrList ? "d-flex align-items-center" : undefined
+                }`}
+            >
+              <div className="thumb">
+                <img className="img-whp" src={item.img} alt="fp1.jpg" />
+                <div className="thmb_cntnt">
+                  <ul className="tag mb0">
+                    <li className="list-inline-item">
+                      <a href="#">庫存</a>
+                    </li>
+                    <li className="list-inline-item">
+                      <a href="#" className="text-capitalize">
+                        {item.featured}
+                      </a>
+                    </li>
+                  </ul>
+                  <ul className="icon mb0">
+                    <li className="list-inline-item">
+                      <a href="#">
+                        <span className="flaticon-transfer-1"></span>
+                      </a>
+                    </li>
+                    <li className="list-inline-item">
+                      <a href="#">
+                        <span className="flaticon-heart"></span>
+                      </a>
+                    </li>
+                  </ul>
+
+                  <Link href={`/listing-details-v1/${item.id}`}>
+                    <a className="fp_price">
+                      ${item.price}
+                      <small> points </small>
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="details">
+                <div className="tc_content">
+                  <p className="text-thm">{item.type}</p>
+                  <h4>
+                    <Link href={`/listing-details-v1/${item.id}`}>
+                      <a>{item.title}</a>
+                    </Link>
+                  </h4>
+                </div>
+                {/* End .tc_content */}
+              </div>
             </div>
           </div>
-          <div className="details">
-            <div className="tc_content">
-              <p className="text-thm">{item.type}</p>
-              <h4>
-                <Link href={`/listing-details-v1/${item.id}`}>
-                  <a>{item.title}</a>
-                </Link>
-              </h4>
-            </div>
-            {/* End .tc_content */}
-          </div>
-        </div>
-      </div>
-    ));
+        )
+      });
 
   // add length of filter items
   useEffect(() => {

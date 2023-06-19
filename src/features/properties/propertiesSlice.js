@@ -19,6 +19,8 @@ const initialState = {
         max: "",
     },
     length: 0,
+    currentPage: 1,
+    dataPerPage: 10,
 };
 
 export const propertiesSlice = createSlice({
@@ -77,6 +79,9 @@ export const propertiesSlice = createSlice({
         addLength: (state, action) => {
             state.length = action.payload;
         },
+        changePage: (state, action) => {
+            state.currentPage = action.payload;
+        }
     },
 });
 
@@ -95,5 +100,6 @@ export const {
     addAreaMax,
     addLength,
     resetAmenities,
+    changePage,
 } = propertiesSlice.actions;
 export default propertiesSlice.reducer;

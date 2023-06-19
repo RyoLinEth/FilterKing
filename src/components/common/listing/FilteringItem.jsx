@@ -239,6 +239,7 @@ const FilteringItem = () => {
               <option value="dragonball">七龍珠</option>
               <option value="hololive">Hololive</option>
               <option value="five">五等分的花嫁</option>
+              <option value="other">其他</option>
             </select>
           </div>
         </div>

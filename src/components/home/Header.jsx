@@ -38,7 +38,7 @@ const Header = () => {
               src="/assets/images/header-logo2.png"
               alt="header-logo2.png"
             />
-            <span>FindFigure</span>
+            <span>ClawStuff</span>
           </a>
         </Link>
         {/* site logo brand */}
