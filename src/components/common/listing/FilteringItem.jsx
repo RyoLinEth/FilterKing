@@ -19,6 +19,7 @@ import {
   addStatus,
   addYearBuilt,
   resetAmenities,
+  changePage,
 } from "../../../features/properties/propertiesSlice";
 import PricingRangeSlider from "../../common/PricingRangeSlider";
 import { v4 as uuidv4 } from "uuid";
@@ -73,58 +74,70 @@ const FilteringItem = () => {
 
   const Router = useRouter();
 
+
   // keyword
   useEffect(() => {
     dispath(addKeyword(getKeyword));
+    dispath(changePage(1));
   }, [dispath, addKeyword, getKeyword]);
 
   // location
   useEffect(() => {
     dispath(addLocation(getLocation));
+    dispath(changePage(1));
   }, [dispath, addLocation, getLocation]);
 
   // status
   useEffect(() => {
     dispath(addStatus(getStatus));
+    dispath(changePage(1));
   }, [dispath, addStatus, getStatus]);
 
   // properties type
   useEffect(() => {
     dispath(addPropertyType(getPropertiesType));
+    dispath(changePage(1));
   }, [dispath, addPropertyType, getPropertiesType]);
 
   // bathroom
   useEffect(() => {
     dispath(addBathrooms(getBathroom));
+    dispath(changePage(1));
   }, [dispath, addBathrooms, getBathroom]);
 
   // bedroom
   useEffect(() => {
     dispath(addBedrooms(getBedroom));
+    dispath(changePage(1));
   }, [dispath, addBedrooms, getBedroom]);
 
   // garages
   useEffect(() => {
     dispath(addGarages(getGarages));
+    dispath(changePage(1));
   }, [dispath, addGarages, getGarages]);
 
   // built years
   useEffect(() => {
     dispath(addYearBuilt(getBuiltYear));
+    dispath(changePage(1));
   }, [dispath, addYearBuilt, getBuiltYear]);
 
   // area min
   useEffect(() => {
     dispath(dispath(addAreaMin(getAreaMin)));
+    dispath(changePage(1));
   }, [dispath, addAreaMin, getAreaMin]);
 
   // area max
   useEffect(() => {
     dispath(dispath(addAreaMax(getAreaMax)));
+    dispath(changePage(1));
   }, [dispath, addAreaMax, getAreaMax]);
 
   // clear filter
   const clearHandler = () => {
+    dispath(changePage(1));
     clearAllFilters();
   };
 

@@ -1,14 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changePage } from "../../../features/properties/propertiesSlice";
 const Pagination = () => {
 
-  const { length, dataPerPage } = useSelector((state) => state.properties);
+  const { length, dataPerPage, currentPage } = useSelector((state) => state.properties);
   const dispatch = useDispatch();
 
   const last = (length / dataPerPage).toFixed(0);
 
-  const [activePage, setActivePage] = useState(1);
+  const [activePage, setActivePage] = useState(currentPage);
+
+  useEffect(() => {
+    if (currentPage !== activePage)
+      setActivePage(currentPage);
+  }, [currentPage])
 
   const handlePageChange = (pageNumber) => {
     dispatch(changePage(pageNumber));
@@ -17,7 +22,7 @@ const Pagination = () => {
   const setPage = (action) => {
     if (action === "Left") {
       if (activePage !== 1) {
-        setActivePage(activePage => activePage - 1)
+        // setActivePage(activePage => activePage - 1)
         handlePageChange(activePage - 1);
       }
       else
@@ -25,7 +30,7 @@ const Pagination = () => {
     }
     else if (action === "Right") {
       if (activePage !== last) {
-        setActivePage(activePage => activePage + 1)
+        // setActivePage(activePage => activePage + 1)
         handlePageChange(activePage + 1)
       }
       else
@@ -40,7 +45,7 @@ const Pagination = () => {
 
   return (
     <ul className="page_navigation d-flex justify-content-center">
-      <li className="page-item disabled" onClick={() => setPage("Left")}>
+      <li className="page-item" onClick={() => setPage("Left")}>
         <a className="page-link" href="#" tabIndex="-1" aria-disabled="true">
           {" "}
           <span className="flaticon-left-arrow"></span>
