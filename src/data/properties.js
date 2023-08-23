@@ -81,7 +81,7 @@ module.exports = [
     garages: 'M',
   },
   {
-    id: 11,
+    id: 10,
     img: "/assets/images/figure/03.jpg",
     price: "20",
     type: "Five",
@@ -90,7 +90,7 @@ module.exports = [
     garages: 'F',
   },
   {
-    id: 12,
+    id: 11,
     img: "/assets/images/figure/04.jpg",
     price: "16",
     type: "Five",
